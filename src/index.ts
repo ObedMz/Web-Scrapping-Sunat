@@ -29,7 +29,7 @@ const puppeteer = require('puppeteer');
 
     const result = await page.evaluate(() => {
       const resultadoElement = document.querySelector('.col-sm-7 .list-group-item-heading');
-      return resultadoElement ? resultadoElement.textContent.trim() : 'No se encontraron resultados';
+      return resultadoElement ? (resultadoElement.textContent as string).trim() : 'No se encontraron resultados';
     });
 
     console.log(`Resultado para RUC ${ruc}: ${result}`);
