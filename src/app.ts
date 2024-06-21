@@ -60,6 +60,7 @@ app.get("/documento/:tipo_documento/:n_documento", async (req: Request, res: Res
 app.get("/ruc/:ruc", async (req : Request, res : Response<ErrorResponseRucResult>) => {
   try{
     const value = req.params.ruc ?? "";
+    console.log(value);
     const result : RucResult = await rucBusqueda(value);
     res.json({ data: result });
   } catch (error: any) {
